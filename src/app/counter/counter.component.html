@@ -1,0 +1,15 @@
+<div class="box">
+  {{ innerValue }}
+  <h1>Counter component (using OnPush)</h1>
+  <h2>{{ countConstructor }}</h2>
+  <h2>{{ countInit }}</h2>
+
+  <button (click)="action()">
+    Click to trigger an event inside the Counter component itself
+  </button>
+
+  <p>
+    This component is updated when action occurs (like clicking the button),
+    or obviously when its @Input have changed.
+  </p>
+</div>

@@ -1,0 +1,15 @@
+<h1>Root component</h1>
+<h2>{{ countConstructor }}</h2>
+<h2>{{ countInit }}</h2>
+
+<button (click)="action()">
+  Click to change the inner Counter component @Input
+</button>
+
+<app-counter [innerValue]="rootValue"></app-counter>
+
+<footer>
+  Angular knows when timers callbacks occurs and renders the views accordingly.
+  <br>
+  Thanks to Zone.js ;-)
+</footer>
