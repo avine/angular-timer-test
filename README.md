@@ -1,2 +1,3 @@
 # angular-timer-test
-Just to test setInterval...
+
+Let's check how Angular handles asynchronous functions like timers and re-renders its views when needed.
