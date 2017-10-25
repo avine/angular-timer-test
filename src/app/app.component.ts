@@ -9,23 +9,17 @@ export class AppComponent implements OnInit {
   countConstructor = 0;
   countInit = 0;
 
-  rootValue = '.';
+  outerValue = '.';
 
   constructor() {
-    setInterval(() => {
-      this.countConstructor++;
-      console.log('Root Constructor: ', this.countConstructor);
-    }, 1000);
+    setInterval(() => this.countConstructor++, 1000);
   }
 
   ngOnInit() {
-    setInterval(() => {
-      this.countInit++;
-      console.log('Root Init', this.countInit);
-    }, 1000);
+    setInterval(() => this.countInit++, 1000);
   }
 
   action() {
-    this.rootValue += '.';
+    this.outerValue += '.';
   }
 }

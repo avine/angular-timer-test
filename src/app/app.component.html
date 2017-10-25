@@ -1,15 +1,26 @@
+<p>
+  Let's check how Angular handles asynchronous
+  functions like timers and re-renders its views when needed.
+</p>
+
 <h1>Root component</h1>
-<h2>{{ countConstructor }}</h2>
-<h2>{{ countInit }}</h2>
+<h2>
+  Count in constructor: <i class="highlight">{{ countConstructor }}</i><br>
+  Count in ngOnInit: <i class="highlight">{{ countInit }}</i>
+</h2>
+<p>
+  So, Zone.js handles timers even in the constructor (at the time there's no view).
+</p>
+<button (click)="action()">Change the inner Counter component @Input</button>
 
-<button (click)="action()">
-  Click to change the inner Counter component @Input
-</button>
 
-<app-counter [innerValue]="rootValue"></app-counter>
+
+<app-counter [innerValue]="outerValue"></app-counter>
+
+
 
 <footer>
-  Angular knows when timers callbacks occurs and renders the views accordingly.
+  To recap, Angular knows when timers callbacks occurs and re-renders its views accordingly.
   <br>
-  Thanks to Zone.js ;-)
+  Thanks to <strong>Zone.js</strong> ;-)
 </footer>

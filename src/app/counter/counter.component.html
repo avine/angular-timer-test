@@ -1,15 +1,27 @@
 <div class="box">
-  {{ innerValue }}
-  <h1>Counter component (using OnPush)</h1>
-  <h2>{{ countConstructor }}</h2>
-  <h2>{{ countInit }}</h2>
+  <h3>@Input: {{ innerValue }}</h3>
+
+  <h1>Counter component (using OnPush strategy)</h1>
+
+  <h2>
+    Count in constructor: <i class="highlight">{{ countConstructor }}</i><br>
+    Count in ngOnInit: <i class="highlight">{{ countInit }}</i>
+  </h2>
 
   <button (click)="action()">
-    Click to trigger an event inside the Counter component itself
+    Trigger an event inside the Counter component itself
   </button>
-
   <p>
-    This component is updated when action occurs (like clicking the button),
-    or obviously when its @Input have changed.
+    So, the inner component is re-rendered when:<br>
+    - its @Input changes (obviously),<br>
+    - an event occurs in its view (like clicking the button), but only if this event is handled by Angular using its event binding.
   </p>
+
+  <a id="vanilla-js-handler" href="#">Trigger an event in pure VanillaJS</a>
+  <p>
+    The global scripts <code>`assets/vanilla-js-handler.js`</code> handles the previous link.<br>
+    This time, the callback occurs outside of Angular ZoneAware and the view is not re-rendered...
+  </p>
+
+  <p><i>Tip: Open the console to see logs...</i></p>
 </div>
